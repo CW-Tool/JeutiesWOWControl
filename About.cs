@@ -62,7 +62,7 @@ namespace JeutieControl
 
     private void InitializeComponent()
     {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (About));
+      ComponentResourceManager resources = new ComponentResourceManager(typeof (About));
       this.button1 = new Button();
       this.richTextBox1 = new RichTextBox();
       this.pictureBox1 = new PictureBox();
@@ -83,9 +83,9 @@ namespace JeutieControl
       this.richTextBox1.ReadOnly = true;
       this.richTextBox1.Size = new Size(242, 84);
       this.richTextBox1.TabIndex = 5;
-      this.richTextBox1.Text = componentResourceManager.GetString("richTextBox1.Text");
+      this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
       this.richTextBox1.TextChanged += new EventHandler(this.richTextBox1_TextChanged);
-      this.pictureBox1.Image = (Image) componentResourceManager.GetObject("pictureBox1.Image");
+      this.pictureBox1.Image = (Image) resources.GetObject("pictureBox1.Image");
       this.pictureBox1.Location = new Point(266, 12);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new Size(69, 72);
@@ -99,8 +99,8 @@ namespace JeutieControl
       this.Controls.Add((Control) this.button1);
       this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
       this.MaximizeBox = false;
-      this.Name = nameof (About);
-      this.Text = nameof (About);
+      this.Name = "About";
+      this.Text = "About";
       this.Load += new EventHandler(this.About_Load);
       ((ISupportInitialize) this.pictureBox1).EndInit();
       this.ResumeLayout(false);

@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeutiesRepackControl", "JeutiesWOWControl.csproj", "{A7E8E9A5-3F55-4173-9418-B574744F5DC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeutiesRepackControl", "JeutiesWOWControl.csproj", "{3ECF19E1-734C-48B4-8549-B2D1E1047B4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7E8E9A5-3F55-4173-9418-B574744F5DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7E8E9A5-3F55-4173-9418-B574744F5DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7E8E9A5-3F55-4173-9418-B574744F5DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7E8E9A5-3F55-4173-9418-B574744F5DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ECF19E1-734C-48B4-8549-B2D1E1047B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECF19E1-734C-48B4-8549-B2D1E1047B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECF19E1-734C-48B4-8549-B2D1E1047B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECF19E1-734C-48B4-8549-B2D1E1047B4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

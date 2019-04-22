@@ -29,7 +29,7 @@ namespace JeutieControl
 
     private void InitializeComponent()
     {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (Help));
+      ComponentResourceManager resources = new ComponentResourceManager(typeof (Help));
       this.richTextBox1 = new RichTextBox();
       this.textBox1 = new TextBox();
       this.textBox2 = new TextBox();
@@ -43,7 +43,7 @@ namespace JeutieControl
       this.richTextBox1.ReadOnly = true;
       this.richTextBox1.Size = new Size(527, 180);
       this.richTextBox1.TabIndex = 0;
-      this.richTextBox1.Text = componentResourceManager.GetString("richTextBox1.Text");
+      this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
       this.textBox1.BackColor = SystemColors.Control;
       this.textBox1.BorderStyle = BorderStyle.None;
       this.textBox1.Font = new Font("Microsoft Sans Serif", 11.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
@@ -75,7 +75,7 @@ namespace JeutieControl
       this.richTextBox2.ReadOnly = true;
       this.richTextBox2.Size = new Size(527, 113);
       this.richTextBox2.TabIndex = 2;
-      this.richTextBox2.Text = componentResourceManager.GetString("richTextBox2.Text");
+      this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
       this.button1.Location = new Point(161, 411);
       this.button1.Name = "button1";
       this.button1.Size = new Size(231, 32);
@@ -93,8 +93,8 @@ namespace JeutieControl
       this.Controls.Add((Control) this.richTextBox1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
-      this.Name = nameof (Help);
-      this.Text = nameof (Help);
+      this.Name = "Help";
+      this.Text = "Help";
       this.Load += new EventHandler(this.Help_Load);
       this.ResumeLayout(false);
       this.PerformLayout();

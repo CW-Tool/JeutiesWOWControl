@@ -82,7 +82,7 @@ namespace JeutieControl
 
     private void InitializeComponent()
     {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (Form1));
+      ComponentResourceManager resources = new ComponentResourceManager(typeof (Form1));
       this.menuStrip1 = new MenuStrip();
       this.fileToolStripMenuItem = new ToolStripMenuItem();
       this.openWorldserverConfigToolStripMenuItem = new ToolStripMenuItem();
@@ -341,7 +341,7 @@ namespace JeutieControl
       this.stopApache.UseVisualStyleBackColor = true;
       this.stopApache.Click += new EventHandler(this.stopApache_Click);
       this.pictureBox4.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox4.Image = (Image) componentResourceManager.GetObject("pictureBox4.Image");
+      this.pictureBox4.Image = (Image) resources.GetObject("pictureBox4.Image");
       this.pictureBox4.Location = new Point(12, 198);
       this.pictureBox4.Name = "pictureBox4";
       this.pictureBox4.Size = new Size(40, 40);
@@ -349,7 +349,7 @@ namespace JeutieControl
       this.pictureBox4.TabIndex = 19;
       this.pictureBox4.TabStop = false;
       this.pictureBox3.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox3.Image = (Image) componentResourceManager.GetObject("pictureBox3.Image");
+      this.pictureBox3.Image = (Image) resources.GetObject("pictureBox3.Image");
       this.pictureBox3.Location = new Point(12, 152);
       this.pictureBox3.Name = "pictureBox3";
       this.pictureBox3.Size = new Size(40, 40);
@@ -357,7 +357,7 @@ namespace JeutieControl
       this.pictureBox3.TabIndex = 18;
       this.pictureBox3.TabStop = false;
       this.pictureBox2.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox2.Image = (Image) componentResourceManager.GetObject("pictureBox2.Image");
+      this.pictureBox2.Image = (Image) resources.GetObject("pictureBox2.Image");
       this.pictureBox2.Location = new Point(12, 78);
       this.pictureBox2.Name = "pictureBox2";
       this.pictureBox2.Size = new Size(40, 40);
@@ -365,7 +365,7 @@ namespace JeutieControl
       this.pictureBox2.TabIndex = 12;
       this.pictureBox2.TabStop = false;
       this.pictureBox1.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox1.Image = (Image) componentResourceManager.GetObject("pictureBox1.Image");
+      this.pictureBox1.Image = (Image) resources.GetObject("pictureBox1.Image");
       this.pictureBox1.Location = new Point(12, 32);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new Size(40, 40);
@@ -415,10 +415,10 @@ namespace JeutieControl
       this.Controls.Add((Control) this.AutoRestart);
       this.Controls.Add((Control) this.menuStrip1);
       this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
+      this.Icon = (Icon) resources.GetObject("$this.Icon");
       this.MainMenuStrip = this.menuStrip1;
       this.MaximizeBox = false;
-      this.Name = nameof (Form1);
+      this.Name = "Form1";
       this.Text = "Jeutie's Repack Restarter";
       this.Load += new EventHandler(this.Form1_Load);
       this.menuStrip1.ResumeLayout(false);
