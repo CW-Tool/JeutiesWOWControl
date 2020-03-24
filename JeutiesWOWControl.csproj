@@ -33,32 +33,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.4 %28ok from kimtooflex git%29">
+      <HintPath>..\BunifuUI_pojie\Bunifu UI Winforms 1.5.4\Bunifu_UI_v1.5.4 (ok from kimtooflex git).dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XanderUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Help.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="About.resx" />
+    <EmbeddedResource Include="Form1.en-US.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Help.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Form1.zh-CN.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.en-US.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.zh-CN.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

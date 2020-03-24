@@ -51,7 +51,6 @@ namespace JeutieControl
     private Button startApache;
     private Button stopMySQL;
     private Button stopApache;
-    private ToolStripMenuItem aboutToolStripMenuItem;
     private ToolStripMenuItem helpToolStripMenuItem;
     private ToolStripMenuItem openWorldserverConfigToolStripMenuItem;
     private ToolStripMenuItem openAuthserverConfigToolStripMenuItem;
@@ -71,7 +70,8 @@ namespace JeutieControl
     private ProcessStartInfo mySQLInfo;
     private ProcessStartInfo apacheInfo;
     private uint authServerRestartCount;
-    private uint worldServerRestartCount;
+
+        private uint worldServerRestartCount;
 
     protected override void Dispose(bool disposing)
     {
@@ -82,353 +82,354 @@ namespace JeutieControl
 
     private void InitializeComponent()
     {
-      ComponentResourceManager resources = new ComponentResourceManager(typeof (Form1));
-      this.menuStrip1 = new MenuStrip();
-      this.fileToolStripMenuItem = new ToolStripMenuItem();
-      this.openWorldserverConfigToolStripMenuItem = new ToolStripMenuItem();
-      this.openAuthserverConfigToolStripMenuItem = new ToolStripMenuItem();
-      this.breakToolStripMenuItem = new ToolStripSeparator();
-      this.exitToolStripMenuItem = new ToolStripMenuItem();
-      this.optionsToolStripMenuItem = new ToolStripMenuItem();
-      this.KeepOnTop = new ToolStripMenuItem();
-      this.transparencyToolStripMenuItem = new ToolStripMenuItem();
-      this.Opacity100 = new ToolStripMenuItem();
-      this.Opacity90 = new ToolStripMenuItem();
-      this.Opacity80 = new ToolStripMenuItem();
-      this.Opacity70 = new ToolStripMenuItem();
-      this.Opacity60 = new ToolStripMenuItem();
-      this.Opacity50 = new ToolStripMenuItem();
-      this.helpToolStripMenuItem = new ToolStripMenuItem();
-      this.aboutToolStripMenuItem = new ToolStripMenuItem();
-      this.MySQLPath = new TextBox();
-      this.ServerPath = new TextBox();
-      this.AutoRestart = new CheckBox();
-      this.startWorld = new Button();
-      this.startAuth = new Button();
-      this.stopWorld = new Button();
-      this.stopAuth = new Button();
-      this.ServerFolderBrowser = new FolderBrowserDialog();
-      this.ServerPathButton = new Button();
-      this.MySQLPathButton = new Button();
-      this.ApachePathButton = new Button();
-      this.SqlFolderBrowser = new FolderBrowserDialog();
-      this.ApacheFolderBrowser = new FolderBrowserDialog();
-      this.startMySQL = new Button();
-      this.startApache = new Button();
-      this.stopMySQL = new Button();
-      this.stopApache = new Button();
-      this.pictureBox4 = new PictureBox();
-      this.pictureBox3 = new PictureBox();
-      this.pictureBox2 = new PictureBox();
-      this.pictureBox1 = new PictureBox();
-      this.log = new RichTextBox();
-      this.ApachePath = new TextBox();
-      this.menuStrip1.SuspendLayout();
-      ((ISupportInitialize) this.pictureBox4).BeginInit();
-      ((ISupportInitialize) this.pictureBox3).BeginInit();
-      ((ISupportInitialize) this.pictureBox2).BeginInit();
-      ((ISupportInitialize) this.pictureBox1).BeginInit();
-      this.SuspendLayout();
-      this.menuStrip1.BackColor = SystemColors.ControlLight;
-      this.menuStrip1.Items.AddRange(new ToolStripItem[4]
-      {
-        (ToolStripItem) this.fileToolStripMenuItem,
-        (ToolStripItem) this.optionsToolStripMenuItem,
-        (ToolStripItem) this.helpToolStripMenuItem,
-        (ToolStripItem) this.aboutToolStripMenuItem
-      });
-      this.menuStrip1.Location = new Point(0, 0);
-      this.menuStrip1.Margin = new Padding(0, 0, 0, 5);
-      this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new Size(391, 24);
-      this.menuStrip1.TabIndex = 0;
-      this.menuStrip1.Text = "menuStrip1";
-      this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[4]
-      {
-        (ToolStripItem) this.openWorldserverConfigToolStripMenuItem,
-        (ToolStripItem) this.openAuthserverConfigToolStripMenuItem,
-        (ToolStripItem) this.breakToolStripMenuItem,
-        (ToolStripItem) this.exitToolStripMenuItem
-      });
-      this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-      this.fileToolStripMenuItem.Size = new Size(37, 20);
-      this.fileToolStripMenuItem.Text = "File";
-      this.openWorldserverConfigToolStripMenuItem.Name = "openWorldserverConfigToolStripMenuItem";
-      this.openWorldserverConfigToolStripMenuItem.Size = new Size(208, 22);
-      this.openWorldserverConfigToolStripMenuItem.Text = "Open Worldserver Config";
-      this.openWorldserverConfigToolStripMenuItem.Click += new EventHandler(this.openWorldserverConfigToolStripMenuItem_Click);
-      this.openAuthserverConfigToolStripMenuItem.Name = "openAuthserverConfigToolStripMenuItem";
-      this.openAuthserverConfigToolStripMenuItem.Size = new Size(208, 22);
-      this.openAuthserverConfigToolStripMenuItem.Text = "Open Authserver Config";
-      this.openAuthserverConfigToolStripMenuItem.Click += new EventHandler(this.openAuthserverConfigToolStripMenuItem_Click);
-      this.breakToolStripMenuItem.Name = "breakToolStripMenuItem";
-      this.breakToolStripMenuItem.Size = new Size(205, 6);
-      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new Size(208, 22);
-      this.exitToolStripMenuItem.Text = "Exit";
-      this.exitToolStripMenuItem.Click += new EventHandler(this.exitToolStripMenuItem_Click);
-      this.optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[2]
-      {
-        (ToolStripItem) this.KeepOnTop,
-        (ToolStripItem) this.transparencyToolStripMenuItem
-      });
-      this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-      this.optionsToolStripMenuItem.Size = new Size(61, 20);
-      this.optionsToolStripMenuItem.Text = "Options";
-      this.KeepOnTop.CheckOnClick = true;
-      this.KeepOnTop.Name = "KeepOnTop";
-      this.KeepOnTop.Size = new Size(154, 22);
-      this.KeepOnTop.Text = "Always On Top";
-      this.KeepOnTop.Click += new EventHandler(this.KeepOnTop_Click);
-      this.transparencyToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[6]
-      {
-        (ToolStripItem) this.Opacity100,
-        (ToolStripItem) this.Opacity90,
-        (ToolStripItem) this.Opacity80,
-        (ToolStripItem) this.Opacity70,
-        (ToolStripItem) this.Opacity60,
-        (ToolStripItem) this.Opacity50
-      });
-      this.transparencyToolStripMenuItem.Name = "transparencyToolStripMenuItem";
-      this.transparencyToolStripMenuItem.Size = new Size(154, 22);
-      this.transparencyToolStripMenuItem.Text = "Opacity";
-      this.Opacity100.Checked = true;
-      this.Opacity100.CheckOnClick = true;
-      this.Opacity100.CheckState = CheckState.Checked;
-      this.Opacity100.Name = "Opacity100";
-      this.Opacity100.Size = new Size(102, 22);
-      this.Opacity100.Text = "100%";
-      this.Opacity100.Click += new EventHandler(this.Opacity100_Click);
-      this.Opacity90.CheckOnClick = true;
-      this.Opacity90.Name = "Opacity90";
-      this.Opacity90.Size = new Size(102, 22);
-      this.Opacity90.Text = "90%";
-      this.Opacity90.Click += new EventHandler(this.Opacity90_Click);
-      this.Opacity80.CheckOnClick = true;
-      this.Opacity80.Name = "Opacity80";
-      this.Opacity80.Size = new Size(102, 22);
-      this.Opacity80.Text = "80%";
-      this.Opacity80.Click += new EventHandler(this.Opacity80_Click);
-      this.Opacity70.CheckOnClick = true;
-      this.Opacity70.Name = "Opacity70";
-      this.Opacity70.Size = new Size(102, 22);
-      this.Opacity70.Text = "70%";
-      this.Opacity70.Click += new EventHandler(this.Opacity70_Click);
-      this.Opacity60.CheckOnClick = true;
-      this.Opacity60.Name = "Opacity60";
-      this.Opacity60.Size = new Size(102, 22);
-      this.Opacity60.Text = "60%";
-      this.Opacity60.Click += new EventHandler(this.Opacity60_Click);
-      this.Opacity50.CheckOnClick = true;
-      this.Opacity50.Name = "Opacity50";
-      this.Opacity50.Size = new Size(102, 22);
-      this.Opacity50.Text = "50%";
-      this.Opacity50.Click += new EventHandler(this.Opacity50_Click);
-      this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-      this.helpToolStripMenuItem.Size = new Size(44, 20);
-      this.helpToolStripMenuItem.Text = "Help";
-      this.helpToolStripMenuItem.Click += new EventHandler(this.helpToolStripMenuItem_Click);
-      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new Size(52, 20);
-      this.aboutToolStripMenuItem.Text = "About";
-      this.aboutToolStripMenuItem.Click += new EventHandler(this.aboutToolStripMenuItem_Click);
-      this.MySQLPath.BorderStyle = BorderStyle.FixedSingle;
-      this.MySQLPath.Font = new Font("Microsoft Sans Serif", 6.75f);
-      this.MySQLPath.Location = new Point(109, 282);
-      this.MySQLPath.Name = "MySQLPath";
-      this.MySQLPath.ReadOnly = true;
-      this.MySQLPath.Size = new Size(270, 18);
-      this.MySQLPath.TabIndex = 2;
-      this.MySQLPath.Text = "Path has not been set yet.";
-      this.ServerPath.AllowDrop = true;
-      this.ServerPath.BorderStyle = BorderStyle.FixedSingle;
-      this.ServerPath.Font = new Font("Microsoft Sans Serif", 6.75f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.ServerPath.Location = new Point(109, 250);
-      this.ServerPath.Name = "ServerPath";
-      this.ServerPath.ReadOnly = true;
-      this.ServerPath.Size = new Size(270, 18);
-      this.ServerPath.TabIndex = 3;
-      this.ServerPath.Text = "Path has not been set yet.";
-      this.AutoRestart.AutoSize = true;
-      this.AutoRestart.Font = new Font("Microsoft Sans Serif", 11.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.AutoRestart.Location = new Point(12, 124);
-      this.AutoRestart.Name = "AutoRestart";
-      this.AutoRestart.Size = new Size(242, 22);
-      this.AutoRestart.TabIndex = 8;
-      this.AutoRestart.Text = "Automatically restart upon crash.";
-      this.AutoRestart.UseVisualStyleBackColor = true;
-      this.startWorld.BackColor = Color.Transparent;
-      this.startWorld.ImageAlign = ContentAlignment.TopLeft;
-      this.startWorld.Location = new Point(59, 32);
-      this.startWorld.Name = "startWorld";
-      this.startWorld.Size = new Size(241, 40);
-      this.startWorld.TabIndex = 9;
-      this.startWorld.Text = "Start the World server.";
-      this.startWorld.UseVisualStyleBackColor = false;
-      this.startWorld.Click += new EventHandler(this.startWorld_Click);
-      this.startAuth.BackColor = Color.Transparent;
-      this.startAuth.Location = new Point(58, 78);
-      this.startAuth.Name = "startAuth";
-      this.startAuth.Size = new Size(242, 40);
-      this.startAuth.TabIndex = 10;
-      this.startAuth.Text = "Start the Auth server.";
-      this.startAuth.UseVisualStyleBackColor = false;
-      this.startAuth.Click += new EventHandler(this.startAuth_Click);
-      this.stopWorld.BackColor = Color.Transparent;
-      this.stopWorld.ImageAlign = ContentAlignment.TopLeft;
-      this.stopWorld.Location = new Point(306, 32);
-      this.stopWorld.Name = "stopWorld";
-      this.stopWorld.Size = new Size(73, 40);
-      this.stopWorld.TabIndex = 13;
-      this.stopWorld.Text = "Stop";
-      this.stopWorld.UseVisualStyleBackColor = false;
-      this.stopWorld.Click += new EventHandler(this.stopWorld_Click);
-      this.stopAuth.BackColor = Color.Transparent;
-      this.stopAuth.Location = new Point(306, 78);
-      this.stopAuth.Name = "stopAuth";
-      this.stopAuth.Size = new Size(73, 40);
-      this.stopAuth.TabIndex = 14;
-      this.stopAuth.Text = "Stop";
-      this.stopAuth.UseVisualStyleBackColor = false;
-      this.stopAuth.Click += new EventHandler(this.stopAuth_Click);
-      this.ServerPathButton.Location = new Point(12, 244);
-      this.ServerPathButton.Name = "ServerPathButton";
-      this.ServerPathButton.Size = new Size(91, 26);
-      this.ServerPathButton.TabIndex = 15;
-      this.ServerPathButton.Text = "Server path";
-      this.ServerPathButton.UseVisualStyleBackColor = true;
-      this.ServerPathButton.Click += new EventHandler(this.ServerPathButton_Click);
-      this.MySQLPathButton.Location = new Point(12, 276);
-      this.MySQLPathButton.Name = "MySQLPathButton";
-      this.MySQLPathButton.Size = new Size(91, 26);
-      this.MySQLPathButton.TabIndex = 16;
-      this.MySQLPathButton.Text = "MySQL path";
-      this.MySQLPathButton.UseVisualStyleBackColor = true;
-      this.MySQLPathButton.Click += new EventHandler(this.MySQLPathButton_Click);
-      this.ApachePathButton.Location = new Point(12, 308);
-      this.ApachePathButton.Name = "ApachePathButton";
-      this.ApachePathButton.Size = new Size(91, 26);
-      this.ApachePathButton.TabIndex = 17;
-      this.ApachePathButton.Text = "Apache path";
-      this.ApachePathButton.UseVisualStyleBackColor = true;
-      this.ApachePathButton.Click += new EventHandler(this.ApachePathButton_Click);
-      this.startMySQL.Location = new Point(58, 152);
-      this.startMySQL.Name = "startMySQL";
-      this.startMySQL.Size = new Size(242, 40);
-      this.startMySQL.TabIndex = 20;
-      this.startMySQL.Text = "Start the MySQL server.";
-      this.startMySQL.UseVisualStyleBackColor = true;
-      this.startMySQL.Click += new EventHandler(this.startMySQL_Click);
-      this.startApache.Location = new Point(58, 198);
-      this.startApache.Name = "startApache";
-      this.startApache.Size = new Size(242, 40);
-      this.startApache.TabIndex = 21;
-      this.startApache.Text = "Start the Apache server.";
-      this.startApache.UseVisualStyleBackColor = true;
-      this.startApache.Click += new EventHandler(this.startApache_Click);
-      this.stopMySQL.Location = new Point(306, 152);
-      this.stopMySQL.Name = "stopMySQL";
-      this.stopMySQL.Size = new Size(73, 40);
-      this.stopMySQL.TabIndex = 22;
-      this.stopMySQL.Text = "Stop";
-      this.stopMySQL.UseVisualStyleBackColor = true;
-      this.stopMySQL.Click += new EventHandler(this.stopMySQL_Click);
-      this.stopApache.Location = new Point(306, 198);
-      this.stopApache.Name = "stopApache";
-      this.stopApache.Size = new Size(73, 40);
-      this.stopApache.TabIndex = 23;
-      this.stopApache.Text = "Stop";
-      this.stopApache.UseVisualStyleBackColor = true;
-      this.stopApache.Click += new EventHandler(this.stopApache_Click);
-      this.pictureBox4.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox4.Image = (Image) resources.GetObject("pictureBox4.Image");
-      this.pictureBox4.Location = new Point(12, 198);
-      this.pictureBox4.Name = "pictureBox4";
-      this.pictureBox4.Size = new Size(40, 40);
-      this.pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-      this.pictureBox4.TabIndex = 19;
-      this.pictureBox4.TabStop = false;
-      this.pictureBox3.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox3.Image = (Image) resources.GetObject("pictureBox3.Image");
-      this.pictureBox3.Location = new Point(12, 152);
-      this.pictureBox3.Name = "pictureBox3";
-      this.pictureBox3.Size = new Size(40, 40);
-      this.pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-      this.pictureBox3.TabIndex = 18;
-      this.pictureBox3.TabStop = false;
-      this.pictureBox2.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox2.Image = (Image) resources.GetObject("pictureBox2.Image");
-      this.pictureBox2.Location = new Point(12, 78);
-      this.pictureBox2.Name = "pictureBox2";
-      this.pictureBox2.Size = new Size(40, 40);
-      this.pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-      this.pictureBox2.TabIndex = 12;
-      this.pictureBox2.TabStop = false;
-      this.pictureBox1.BackgroundImageLayout = ImageLayout.None;
-      this.pictureBox1.Image = (Image) resources.GetObject("pictureBox1.Image");
-      this.pictureBox1.Location = new Point(12, 32);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new Size(40, 40);
-      this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-      this.pictureBox1.TabIndex = 11;
-      this.pictureBox1.TabStop = false;
-      this.log.BackColor = SystemColors.Info;
-      this.log.BorderStyle = BorderStyle.FixedSingle;
-      this.log.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.log.Location = new Point(12, 340);
-      this.log.Name = "log";
-      this.log.ReadOnly = true;
-      this.log.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
-      this.log.Size = new Size(367, 130);
-      this.log.TabIndex = 0;
-      this.log.Text = "";
-      this.ApachePath.BorderStyle = BorderStyle.FixedSingle;
-      this.ApachePath.Font = new Font("Microsoft Sans Serif", 6.75f);
-      this.ApachePath.Location = new Point(109, 314);
-      this.ApachePath.Name = "ApachePath";
-      this.ApachePath.ReadOnly = true;
-      this.ApachePath.Size = new Size(270, 18);
-      this.ApachePath.TabIndex = 1;
-      this.ApachePath.Text = "Path has not been set yet.";
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.ClientSize = new Size(391, 486);
-      this.Controls.Add((Control) this.ServerPathButton);
-      this.Controls.Add((Control) this.ApachePath);
-      this.Controls.Add((Control) this.log);
-      this.Controls.Add((Control) this.MySQLPath);
-      this.Controls.Add((Control) this.stopApache);
-      this.Controls.Add((Control) this.stopMySQL);
-      this.Controls.Add((Control) this.ApachePathButton);
-      this.Controls.Add((Control) this.ServerPath);
-      this.Controls.Add((Control) this.MySQLPathButton);
-      this.Controls.Add((Control) this.startApache);
-      this.Controls.Add((Control) this.startMySQL);
-      this.Controls.Add((Control) this.pictureBox4);
-      this.Controls.Add((Control) this.pictureBox3);
-      this.Controls.Add((Control) this.stopAuth);
-      this.Controls.Add((Control) this.stopWorld);
-      this.Controls.Add((Control) this.pictureBox2);
-      this.Controls.Add((Control) this.pictureBox1);
-      this.Controls.Add((Control) this.startAuth);
-      this.Controls.Add((Control) this.startWorld);
-      this.Controls.Add((Control) this.AutoRestart);
-      this.Controls.Add((Control) this.menuStrip1);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.Icon = (Icon) resources.GetObject("$this.Icon");
-      this.MainMenuStrip = this.menuStrip1;
-      this.MaximizeBox = false;
-      this.Name = "Form1";
-      this.Text = "Jeutie's Repack Restarter";
-      this.Load += new EventHandler(this.Form1_Load);
-      this.menuStrip1.ResumeLayout(false);
-      this.menuStrip1.PerformLayout();
-      ((ISupportInitialize) this.pictureBox4).EndInit();
-      ((ISupportInitialize) this.pictureBox3).EndInit();
-      ((ISupportInitialize) this.pictureBox2).EndInit();
-      ((ISupportInitialize) this.pictureBox1).EndInit();
-      this.ResumeLayout(false);
-      this.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openWorldserverConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openAuthserverConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.breakToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.KeepOnTop = new System.Windows.Forms.ToolStripMenuItem();
+            this.transparencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Opacity100 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Opacity90 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Opacity80 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Opacity70 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Opacity60 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Opacity50 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MySQLPath = new System.Windows.Forms.TextBox();
+            this.ServerPath = new System.Windows.Forms.TextBox();
+            this.AutoRestart = new System.Windows.Forms.CheckBox();
+            this.startWorld = new System.Windows.Forms.Button();
+            this.startAuth = new System.Windows.Forms.Button();
+            this.stopWorld = new System.Windows.Forms.Button();
+            this.stopAuth = new System.Windows.Forms.Button();
+            this.ServerFolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.ServerPathButton = new System.Windows.Forms.Button();
+            this.MySQLPathButton = new System.Windows.Forms.Button();
+            this.ApachePathButton = new System.Windows.Forms.Button();
+            this.SqlFolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.ApacheFolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.startMySQL = new System.Windows.Forms.Button();
+            this.startApache = new System.Windows.Forms.Button();
+            this.stopMySQL = new System.Windows.Forms.Button();
+            this.stopApache = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.log = new System.Windows.Forms.RichTextBox();
+            this.ApachePath = new System.Windows.Forms.TextBox();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.optionsToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openWorldserverConfigToolStripMenuItem,
+            this.openAuthserverConfigToolStripMenuItem,
+            this.breakToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
+            // 
+            // openWorldserverConfigToolStripMenuItem
+            // 
+            this.openWorldserverConfigToolStripMenuItem.Name = "openWorldserverConfigToolStripMenuItem";
+            resources.ApplyResources(this.openWorldserverConfigToolStripMenuItem, "openWorldserverConfigToolStripMenuItem");
+            this.openWorldserverConfigToolStripMenuItem.Click += new System.EventHandler(this.openWorldserverConfigToolStripMenuItem_Click);
+            // 
+            // openAuthserverConfigToolStripMenuItem
+            // 
+            this.openAuthserverConfigToolStripMenuItem.Name = "openAuthserverConfigToolStripMenuItem";
+            resources.ApplyResources(this.openAuthserverConfigToolStripMenuItem, "openAuthserverConfigToolStripMenuItem");
+            this.openAuthserverConfigToolStripMenuItem.Click += new System.EventHandler(this.openAuthserverConfigToolStripMenuItem_Click);
+            // 
+            // breakToolStripMenuItem
+            // 
+            this.breakToolStripMenuItem.Name = "breakToolStripMenuItem";
+            resources.ApplyResources(this.breakToolStripMenuItem, "breakToolStripMenuItem");
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.KeepOnTop,
+            this.transparencyToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
+            // 
+            // KeepOnTop
+            // 
+            this.KeepOnTop.CheckOnClick = true;
+            this.KeepOnTop.Name = "KeepOnTop";
+            resources.ApplyResources(this.KeepOnTop, "KeepOnTop");
+            this.KeepOnTop.Click += new System.EventHandler(this.KeepOnTop_Click);
+            // 
+            // transparencyToolStripMenuItem
+            // 
+            this.transparencyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Opacity100,
+            this.Opacity90,
+            this.Opacity80,
+            this.Opacity70,
+            this.Opacity60,
+            this.Opacity50});
+            this.transparencyToolStripMenuItem.Name = "transparencyToolStripMenuItem";
+            resources.ApplyResources(this.transparencyToolStripMenuItem, "transparencyToolStripMenuItem");
+            // 
+            // Opacity100
+            // 
+            this.Opacity100.Checked = true;
+            this.Opacity100.CheckOnClick = true;
+            this.Opacity100.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Opacity100.Name = "Opacity100";
+            resources.ApplyResources(this.Opacity100, "Opacity100");
+            this.Opacity100.Click += new System.EventHandler(this.Opacity100_Click);
+            // 
+            // Opacity90
+            // 
+            this.Opacity90.CheckOnClick = true;
+            this.Opacity90.Name = "Opacity90";
+            resources.ApplyResources(this.Opacity90, "Opacity90");
+            this.Opacity90.Click += new System.EventHandler(this.Opacity90_Click);
+            // 
+            // Opacity80
+            // 
+            this.Opacity80.CheckOnClick = true;
+            this.Opacity80.Name = "Opacity80";
+            resources.ApplyResources(this.Opacity80, "Opacity80");
+            this.Opacity80.Click += new System.EventHandler(this.Opacity80_Click);
+            // 
+            // Opacity70
+            // 
+            this.Opacity70.CheckOnClick = true;
+            this.Opacity70.Name = "Opacity70";
+            resources.ApplyResources(this.Opacity70, "Opacity70");
+            this.Opacity70.Click += new System.EventHandler(this.Opacity70_Click);
+            // 
+            // Opacity60
+            // 
+            this.Opacity60.CheckOnClick = true;
+            this.Opacity60.Name = "Opacity60";
+            resources.ApplyResources(this.Opacity60, "Opacity60");
+            this.Opacity60.Click += new System.EventHandler(this.Opacity60_Click);
+            // 
+            // Opacity50
+            // 
+            this.Opacity50.CheckOnClick = true;
+            this.Opacity50.Name = "Opacity50";
+            resources.ApplyResources(this.Opacity50, "Opacity50");
+            this.Opacity50.Click += new System.EventHandler(this.Opacity50_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // MySQLPath
+            // 
+            this.MySQLPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.MySQLPath, "MySQLPath");
+            this.MySQLPath.Name = "MySQLPath";
+            this.MySQLPath.ReadOnly = true;
+            // 
+            // ServerPath
+            // 
+            this.ServerPath.AllowDrop = true;
+            this.ServerPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.ServerPath, "ServerPath");
+            this.ServerPath.Name = "ServerPath";
+            this.ServerPath.ReadOnly = true;
+            // 
+            // AutoRestart
+            // 
+            resources.ApplyResources(this.AutoRestart, "AutoRestart");
+            this.AutoRestart.Name = "AutoRestart";
+            this.AutoRestart.UseVisualStyleBackColor = true;
+            // 
+            // startWorld
+            // 
+            this.startWorld.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.startWorld, "startWorld");
+            this.startWorld.Name = "startWorld";
+            this.startWorld.UseVisualStyleBackColor = false;
+            this.startWorld.Click += new System.EventHandler(this.startWorld_Click);
+            // 
+            // startAuth
+            // 
+            this.startAuth.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.startAuth, "startAuth");
+            this.startAuth.Name = "startAuth";
+            this.startAuth.UseVisualStyleBackColor = false;
+            this.startAuth.Click += new System.EventHandler(this.startAuth_Click);
+            // 
+            // stopWorld
+            // 
+            this.stopWorld.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.stopWorld, "stopWorld");
+            this.stopWorld.Name = "stopWorld";
+            this.stopWorld.UseVisualStyleBackColor = false;
+            this.stopWorld.Click += new System.EventHandler(this.stopWorld_Click);
+            // 
+            // stopAuth
+            // 
+            this.stopAuth.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.stopAuth, "stopAuth");
+            this.stopAuth.Name = "stopAuth";
+            this.stopAuth.UseVisualStyleBackColor = false;
+            this.stopAuth.Click += new System.EventHandler(this.stopAuth_Click);
+            // 
+            // ServerPathButton
+            // 
+            resources.ApplyResources(this.ServerPathButton, "ServerPathButton");
+            this.ServerPathButton.Name = "ServerPathButton";
+            this.ServerPathButton.UseVisualStyleBackColor = true;
+            this.ServerPathButton.Click += new System.EventHandler(this.ServerPathButton_Click);
+            // 
+            // MySQLPathButton
+            // 
+            resources.ApplyResources(this.MySQLPathButton, "MySQLPathButton");
+            this.MySQLPathButton.Name = "MySQLPathButton";
+            this.MySQLPathButton.UseVisualStyleBackColor = true;
+            this.MySQLPathButton.Click += new System.EventHandler(this.MySQLPathButton_Click);
+            // 
+            // ApachePathButton
+            // 
+            resources.ApplyResources(this.ApachePathButton, "ApachePathButton");
+            this.ApachePathButton.Name = "ApachePathButton";
+            this.ApachePathButton.UseVisualStyleBackColor = true;
+            this.ApachePathButton.Click += new System.EventHandler(this.ApachePathButton_Click);
+            // 
+            // startMySQL
+            // 
+            resources.ApplyResources(this.startMySQL, "startMySQL");
+            this.startMySQL.Name = "startMySQL";
+            this.startMySQL.UseVisualStyleBackColor = true;
+            this.startMySQL.Click += new System.EventHandler(this.startMySQL_Click);
+            // 
+            // startApache
+            // 
+            resources.ApplyResources(this.startApache, "startApache");
+            this.startApache.Name = "startApache";
+            this.startApache.UseVisualStyleBackColor = true;
+            this.startApache.Click += new System.EventHandler(this.startApache_Click);
+            // 
+            // stopMySQL
+            // 
+            resources.ApplyResources(this.stopMySQL, "stopMySQL");
+            this.stopMySQL.Name = "stopMySQL";
+            this.stopMySQL.UseVisualStyleBackColor = true;
+            this.stopMySQL.Click += new System.EventHandler(this.stopMySQL_Click);
+            // 
+            // stopApache
+            // 
+            resources.ApplyResources(this.stopApache, "stopApache");
+            this.stopApache.Name = "stopApache";
+            this.stopApache.UseVisualStyleBackColor = true;
+            this.stopApache.Click += new System.EventHandler(this.stopApache_Click);
+            // 
+            // pictureBox4
+            // 
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // log
+            // 
+            this.log.BackColor = System.Drawing.SystemColors.Info;
+            this.log.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.log, "log");
+            this.log.Name = "log";
+            this.log.ReadOnly = true;
+            // 
+            // ApachePath
+            // 
+            this.ApachePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.ApachePath, "ApachePath");
+            this.ApachePath.Name = "ApachePath";
+            this.ApachePath.ReadOnly = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.ServerPathButton);
+            this.Controls.Add(this.ApachePath);
+            this.Controls.Add(this.log);
+            this.Controls.Add(this.MySQLPath);
+            this.Controls.Add(this.stopApache);
+            this.Controls.Add(this.stopMySQL);
+            this.Controls.Add(this.ApachePathButton);
+            this.Controls.Add(this.ServerPath);
+            this.Controls.Add(this.MySQLPathButton);
+            this.Controls.Add(this.startApache);
+            this.Controls.Add(this.startMySQL);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.stopAuth);
+            this.Controls.Add(this.stopWorld);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.startAuth);
+            this.Controls.Add(this.startWorld);
+            this.Controls.Add(this.AutoRestart);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
     }
 
     public Form1()
@@ -651,10 +652,6 @@ namespace JeutieControl
       }
     }
 
-    private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      int num = (int) new About().ShowDialog();
-    }
 
     private void startWorld_Click(object sender, EventArgs e)
     {
